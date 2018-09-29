@@ -1,0 +1,22 @@
+{
+  "name": "@writetome51/open-array-filter",
+  "version": "1.0.0",
+  "description": "Class with methods that narrow down the content of the array",
+  "main": "",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "array",
+    "manipulation",
+    "typescript",
+    "class"
+  ],
+  "author": "Steve Thompson",
+  "license": "MIT",
+  "dependencies": {
+    "basic-data-handling": "latest",
+    "@writetome51/open-array-container": "latest",
+    "@writetome51/array-non-modifying-getters-basic": "latest"
+  }
+}
