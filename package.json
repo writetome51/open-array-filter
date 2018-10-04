@@ -1,6 +1,6 @@
 {
   "name": "@writetome51/open-array-filter",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Class with methods that narrow down the content of the array",
   "main": "",
   "scripts": {
@@ -17,6 +17,8 @@
   "dependencies": {
     "basic-data-handling": "latest",
     "@writetome51/open-array-container": "latest",
-    "@writetome51/array-non-modifying-getters-basic": "latest"
+    "@writetome51/array-non-modifying-getters-basic": "latest",
+    "@writetome51/array-append-prepend": "latest",
+    "@writetome51/arrays-match": "latest"
   }
 }

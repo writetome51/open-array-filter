@@ -1,6 +1,7 @@
 import { OpenArrayContainer } from '@writetome51/open-array-container/OpenArrayContainer';
 import { getFilteredResults } from '@writetome51/array-non-modifying-getters-basic/getFilteredResults';
 import { isArray } from 'basic-data-handling/isArray_notArray';
+import { append } from '@writetome51/array-append-prepend/append-prepend';
 
 
 export class OpenArrayFilter extends OpenArrayContainer {
@@ -13,7 +14,9 @@ export class OpenArrayFilter extends OpenArrayContainer {
 	// testFunction must have same signature as callback passed to array.filter(),
 	// and must return boolean.
 	byTest(testFunction): this {
-		return this.returnThis_after(this.data = getFilteredResults(testFunction, this.data));
+		let filteredResults = getFilteredResults(testFunction, this.data);
+		this.data.length = 0;
+		return this.returnThis_after(append(filteredResults, this.data));
 	}
 
 

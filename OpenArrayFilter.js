@@ -16,6 +16,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var OpenArrayContainer_1 = require("@writetome51/open-array-container/OpenArrayContainer");
 var getFilteredResults_1 = require("@writetome51/array-non-modifying-getters-basic/getFilteredResults");
 var isArray_notArray_1 = require("basic-data-handling/isArray_notArray");
+var append_prepend_1 = require("@writetome51/array-append-prepend/append-prepend");
 var OpenArrayFilter = /** @class */ (function (_super) {
     __extends(OpenArrayFilter, _super);
     function OpenArrayFilter(data) {
@@ -25,7 +26,9 @@ var OpenArrayFilter = /** @class */ (function (_super) {
     // testFunction must have same signature as callback passed to array.filter(),
     // and must return boolean.
     OpenArrayFilter.prototype.byTest = function (testFunction) {
-        return this.returnThis_after(this.data = getFilteredResults_1.getFilteredResults(testFunction, this.data));
+        var filteredResults = getFilteredResults_1.getFilteredResults(testFunction, this.data);
+        this.data.length = 0;
+        return this.returnThis_after(append_prepend_1.append(filteredResults, this.data));
     };
     OpenArrayFilter.prototype.byType = function (type) {
         // @ts-ignore
