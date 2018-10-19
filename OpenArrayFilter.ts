@@ -1,5 +1,5 @@
 import { OpenArrayContainer } from '@writetome51/open-array-container/OpenArrayContainer';
-import { getFilteredResults } from '@writetome51/array-non-modifying-getters-basic/getFilteredResults';
+import { getFilteredResults } from '@writetome51/array-get-filtered-results';
 import { isArray } from 'basic-data-handling/isArray_notArray';
 import { append } from '@writetome51/array-append-prepend/append-prepend';
 

@@ -14,11 +14,13 @@
   ],
   "author": "Steve Thompson",
   "license": "MIT",
+  "devDependencies": {
+    "@writetome51/arrays-match": "latest"
+  },
   "dependencies": {
     "basic-data-handling": "latest",
+    "@writetome51/array-get-filtered-results": "latest",
     "@writetome51/open-array-container": "latest",
-    "@writetome51/array-non-modifying-getters-basic": "latest",
-    "@writetome51/array-append-prepend": "latest",
-    "@writetome51/arrays-match": "latest"
+    "@writetome51/array-append-prepend": "latest"
   }
 }
