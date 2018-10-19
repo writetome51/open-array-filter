@@ -2,12 +2,13 @@
   "name": "@writetome51/open-array-filter",
   "version": "1.0.1",
   "description": "Class with methods that narrow down the content of the array",
-  "main": "",
+  "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [
     "array",
+    "filter",
     "manipulation",
     "typescript",
     "class"

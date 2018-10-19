@@ -3,36 +3,24 @@ The OpenArrayFilter class is a dependency of the OpenArray class
 
 To instantiate, pass the actual array it will contain into its constructor:
 
-let getter = new OpenArrayItemGetter( [item1, item2, item3,...] );
+let filter = new OpenArrayFilter( [item1, item2, item3,...] );
 
 You can also reset the array by accessing the classes 'data' property:
 
-getter.data = [1,2,3,4,...];
+filter.data = [1,2,3,4,...];
 
 
-OpenArrayFilter has methods that narrow down the content of the array it contains.
+OpenArrayFilter has methods that narrow down the content of the array it contains.  These are all
+of them:
+
+        // Narrows down the array to only the values that pass test:
+
+    	byTest(testFunction) // returns class instance
+        // testFunction = function(currentValue, currentIndex, theArray){...}
+        // testFunction must return boolean.
 
 
-	// testFunction must have same signature as callback passed to array.filter(),
-	// and must return boolean.
-	byTest(testFunction): this {
-		let filteredResults = getFilteredResults(testFunction, this.data);
-		this.data.length = 0;
-		return this.returnThis_after(append(filteredResults, this.data));
-	}
+        // Narrows down the array to only values that are the specified type:
 
-
-	byType(type: 'number' | 'boolean' | 'string' | 'array' | 'object' | 'function' | 'undefined'): this {
-		// @ts-ignore
-		type = type.toLowerCase();
-		if (type === 'array') {
-			return this.byTest((item) => {
-				return (isArray(item));
-			});
-		}
-		else {
-			return this.byTest((item) => {
-				return (typeof item === type);
-			});
-		}
-	}
+    	byType(type: 'number' | 'boolean' | 'string' | 'array' | 'object' | 'function' | 'undefined')
+        // returns class instance

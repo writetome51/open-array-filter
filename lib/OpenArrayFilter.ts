@@ -11,10 +11,11 @@ export class OpenArrayFilter extends OpenArrayContainer {
 	}
 
 
-	// testFunction must have same signature as callback passed to array.filter(),
-	// and must return boolean.
+	// testFunction = function(currentValue, currentIndex, theArray){...}
+	// testFunction must return boolean.
 	byTest(testFunction): this {
 		let filteredResults = getFilteredResults(testFunction, this.data);
+		// It's import we replace all the contents of this.data this way, so its reference isn't broken:
 		this.data.length = 0;
 		return this.returnThis_after(append(filteredResults, this.data));
 	}
@@ -23,16 +24,9 @@ export class OpenArrayFilter extends OpenArrayContainer {
 	byType(type: 'number' | 'boolean' | 'string' | 'array' | 'object' | 'function' | 'undefined'): this {
 		// @ts-ignore
 		type = type.toLowerCase();
-		if (type === 'array') {
-			return this.byTest((item) => {
-				return (isArray(item));
-			});
-		}
-		else {
-			return this.byTest((item) => {
-				return (typeof item === type);
-			});
-		}
+		if (type === 'array') return this.byTest((item) => isArray(item));
+
+		else return this.byTest((item) => typeof item === type);
 	}
 
 

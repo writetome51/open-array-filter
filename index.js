@@ -1,3 +1,3 @@
-var OpenArrayFilter = require('./OpenArrayFilter');
+var OpenArrayFilter = require('./lib/OpenArrayFilter');
 
 module.exports = OpenArrayFilter;
