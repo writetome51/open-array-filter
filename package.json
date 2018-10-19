@@ -6,6 +6,10 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/writetome51/open-array-filter.git"
+  },
   "keywords": [
     "array",
     "filter",
@@ -15,6 +19,10 @@
   ],
   "author": "Steve Thompson",
   "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/writetome51/open-array-filter/issues"
+  },
+  "homepage": "https://github.com/writetome51/open-array-filter#readme",
   "devDependencies": {
     "@writetome51/arrays-match": "latest"
   },
