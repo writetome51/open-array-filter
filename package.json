@@ -1,14 +1,15 @@
 {
-  "name": "@writetome51/open-array-filter",
+  "name": "@writetome51/public-array-filter",
   "version": "1.0.2",
-  "description": "Class with methods that narrow down the content of the array",
-  "main": "index.js",
+  "description": "Array-manipulating class with methods that narrow down the content of the array",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "tsc"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/writetome51/open-array-filter.git"
+    "url": "git+https://github.com/writetome51/public-array-filter.git"
   },
   "keywords": [
     "array",
@@ -20,16 +21,17 @@
   "author": "Steve Thompson",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/writetome51/open-array-filter/issues"
+    "url": "https://github.com/writetome51/public-array-filter/issues"
   },
-  "homepage": "https://github.com/writetome51/open-array-filter#readme",
+  "homepage": "https://github.com/writetome51/public-array-filter#readme",
   "devDependencies": {
-    "@writetome51/arrays-match": "latest"
+    "@writetome51/arrays-match": "latest",
+    "typescript": "^3.0.1"
   },
   "dependencies": {
     "basic-data-handling": "latest",
     "@writetome51/array-get-filtered-results": "latest",
-    "@writetome51/open-array-container": "latest",
-    "@writetome51/array-append-prepend": "latest"
+    "@writetome51/array-append-prepend": "latest",
+    "@writetome51/public-array-container": "latest"
   }
 }

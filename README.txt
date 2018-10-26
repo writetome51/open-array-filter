@@ -1,16 +1,20 @@
-The OpenArrayFilter class is a dependency of the OpenArray class
-( package:  @writetome51/open-array ).
+To include in your project:
+
+import { PublicArrayFilter } from '@writetome51/public-array-filter';
+
+The PublicArrayFilter class is a dependency of the PublicArray class
+( package:  @writetome51/public-array ).
 
 To instantiate, pass the actual array it will contain into its constructor:
 
-let filter = new OpenArrayFilter( [item1, item2, item3,...] );
+let filter = new PublicArrayFilter( [item1, item2, item3,...] );
 
-You can also reset the array by accessing the classes 'data' property:
+You can also reset the array by accessing the class 'data' property:
 
 filter.data = [1,2,3,4,...];
 
 
-OpenArrayFilter has methods that narrow down the content of the array it contains.  These are all
+PublicArrayFilter has methods that narrow down the content of the array it contains.  These are all
 of them:
 
         // Narrows down the array to only the values that pass test:
