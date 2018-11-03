@@ -2,7 +2,9 @@ import { PublicArrayContainer } from '@writetome51/public-array-container';
 import { getFilteredResults } from '@writetome51/array-get-filtered-results';
 import { isArray } from 'basic-data-handling/isArray_notArray';
 import { errorIfNotString } from 'basic-data-handling/errorIfNotString';
-import { append } from '@writetome51/array-append-prepend/append-prepend';
+import { setArray } from '@writetome51/set-array';
+// @ts-ignore
+let arrayPluck = require('array-pluck');
 
 
 export class PublicArrayFilter extends PublicArrayContainer {
@@ -15,11 +17,11 @@ export class PublicArrayFilter extends PublicArrayContainer {
 	// These methods all narrow down the content of the array and return the class instance.
 
 
-	byTest(testFunction: (currentValue, currentIndex?, array?) => boolean): this {
+	byTest(testFunction: (item, index?, array?) => boolean): this {
+		// each object in filteredResults matches this interface: {value: any, index: integer}
 		let filteredResults = getFilteredResults(testFunction, this.data);
-		// It's import we replace all the contents of this.data this way, so its reference isn't broken:
-		this.data.length = 0;
-		return this.returnThis_after(append(filteredResults, this.data));
+		let values = arrayPluck(filteredResults, 'value');
+		return this.returnThis_after(setArray(this.data, values));
 	}
 
 

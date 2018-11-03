@@ -20,7 +20,7 @@ of them:
         // Narrows down the array to only the values that pass test:
 
     	byTest(testFunction) // returns class instance
-        // testFunction = function(currentValue, currentIndex, theArray){...}
+        // testFunction = function(currentValue, currentIndex?, theArray?){...}
         // testFunction must return boolean.
 
 
