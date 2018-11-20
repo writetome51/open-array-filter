@@ -1,6 +1,6 @@
 {
   "name": "@writetome51/public-array-filter",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "Array-manipulating class with methods that narrow down the content of the array",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -25,14 +25,14 @@
   },
   "homepage": "https://github.com/writetome51/public-array-filter#readme",
   "devDependencies": {
-    "@writetome51/arrays-match": "latest",
+    "@writetome51/arrays-match": "~1.0.2",
     "typescript": "^3.0.1"
   },
   "dependencies": {
-    "basic-data-handling": "latest",
-    "@writetome51/set-array": "latest",
-    "@writetome51/array-get-filtered-results": "latest",
-    "@writetome51/public-array-container": "latest",
+    "basic-data-handling": "~1.0.13",
+    "@writetome51/set-array": "~1.0.0",
+    "@writetome51/array-get-filtered-results": "~2.0.1",
+    "@writetome51/public-array-container": "~1.0.4",
     "array-pluck": "^1.0.0"
   }
 }

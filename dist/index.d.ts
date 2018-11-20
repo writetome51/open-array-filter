@@ -5,7 +5,7 @@ export declare class PublicArrayFilter extends PublicArrayContainer {
 	constructor(data?: any[]);
 
 
-	byTest(testFunction: (currentValue: any, currentIndex?: any, array?: any) => boolean): this;
+	byTest(testFunction: (item: any, index?: any, array?: any) => boolean): this;
 
 
 	byType(type: 'number' | 'boolean' | 'string' | 'array' | 'object' | 'function' | 'undefined'): this;
