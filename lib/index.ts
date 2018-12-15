@@ -18,8 +18,10 @@ export class PublicArrayFilter extends PublicArrayContainer {
 
 
 	byTest(testFunction: (item, index?, array?) => boolean): this {
+
 		// each object in filteredResults matches this interface: {value: any, index: integer}
 		let filteredResults = getFilteredResults(testFunction, this.data);
+
 		let values = arrayPluck(filteredResults, 'value');
 		return this.returnThis_after(setArray(this.data, values));
 	}

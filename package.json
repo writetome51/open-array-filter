@@ -1,6 +1,6 @@
 {
   "name": "@writetome51/public-array-filter",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "description": "Array-manipulating class with methods that narrow down the content of the array",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
