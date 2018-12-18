@@ -31,7 +31,7 @@ var PublicArrayFilter = /** @class */ (function (_super) {
         // each object in filteredResults matches this interface: {value: any, index: integer}
         var filteredResults = array_get_filtered_results_1.getFilteredResults(testFunction, this.data);
         var values = arrayPluck(filteredResults, 'value');
-        return this.returnThis_after(set_array_1.setArray(this.data, values));
+        return this._returnThis_after(set_array_1.setArray(this.data, values));
     };
     PublicArrayFilter.prototype.byType = function (type) {
         errorIfNotString_1.errorIfNotString(type);

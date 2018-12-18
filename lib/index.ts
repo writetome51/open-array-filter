@@ -23,7 +23,7 @@ export class PublicArrayFilter extends PublicArrayContainer {
 		let filteredResults = getFilteredResults(testFunction, this.data);
 
 		let values = arrayPluck(filteredResults, 'value');
-		return this.returnThis_after(setArray(this.data, values));
+		return this._returnThis_after(setArray(this.data, values));
 	}
 
 
