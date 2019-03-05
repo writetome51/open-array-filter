@@ -3,33 +3,19 @@
 An array-manipulating Typescript/Javascript class with methods that   
 narrow down the content of the array it contains.
 
-## Installation
-
-You must have npm installed first.  Then, in the command line:
-
-```bash
-npm install @writetome51/public-array-filter
+## Constructor
+```
+constructor(data? = [])  // 'data' becomes the array the class manipulates.
 ```
 
-## Loading
-    
-    // if using Typescript:
-    import { PublicArrayFilter } from '@writetome51/public-array-filter';
-    // if using ES5 Javascript:
-    var PublicArrayFilter = 
-            require('@writetome51/public-array-filter').PublicArrayFilter;
-
-To instantiate, pass the actual array it will contain to its constructor:
-
-    let filter = new PublicArrayFilter( [item1, item2, item3,...] );
-
-You can reset the array by accessing the class `.data` property:
-
-    filter.data = [1,2,3,4,...];    
+You can also reset the array by accessing the class `.data` property:
+```
+this.data = [1,2,3,4];
+```
     
 ## Properties
 ```
-data : any[] (read-writable) // the actual array
+data : any[]   // the actual array
 
 className: string (read-only)
 ```
@@ -37,16 +23,17 @@ className: string (read-only)
 ## Methods
 ```
 byTest(testFunction): this
-    // Narrows down this.data to only the values that pass test.
-    // testFunction = function(currentValue, currentIndex?, theArray?){...}
-    // testFunction must return boolean.
+    // Narrows down this.data to only the values that pass `testFunction`.
+    // testFunction = function(currentValue, currentIndex?, theArray?): boolean
 
 byType(
     type: 'number' | 'boolean' | 'string' | 'array' | 'object' | 'function' | 'undefined'
 ): this
     // Narrows down this.data to only values that are the specified type.
-
-
+``` 
+The methods below are not important to know about in order to use this  
+class.  They're inherited from [BaseClass](https://github.com/writetome51/typescript-base-class#baseclass) .
+``` 
 protected   _createGetterAndOrSetterForEach(
 		propertyNames: string[],
 		configuration: IGetterSetterConfiguration
@@ -89,6 +76,22 @@ protected   _runMethod_and_returnThis(
 ## Inheritance Chain
 
 PublicArrayFilter<--[PublicArrayContainer](https://github.com/writetome51/public-array-container#publicarraycontainer)<--[BaseClass](https://github.com/writetome51/typescript-base-class#baseclass)
+
+## Installation
+
+You must have npm installed first.  Then, in the command line:
+
+```bash
+npm install @writetome51/public-array-filter
+```
+
+## Loading
+```
+// if using Typescript:
+import { PublicArrayFilter } from '@writetome51/public-array-filter';
+// if using ES5 Javascript:
+var PublicArrayFilter = require('@writetome51/public-array-filter').PublicArrayFilter;
+```
 
 ## License
 [MIT](https://choosealicense.com/licenses/mit/)

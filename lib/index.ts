@@ -1,10 +1,9 @@
 import { PublicArrayContainer } from '@writetome51/public-array-container';
-import { getFilteredResults } from '@writetome51/array-get-filtered-results';
 import { isArray } from 'basic-data-handling/isArray_notArray';
 import { errorIfNotString } from 'basic-data-handling/errorIfNotString';
 import { setArray } from '@writetome51/set-array';
-// @ts-ignore
-let arrayPluck = require('array-pluck');
+import { getArrayFromProperty } from '@writetome51/get-array-from-property';
+import { getByTest } from '@writetome51/array-get-by-test';
 
 
 export class PublicArrayFilter extends PublicArrayContainer {
@@ -20,9 +19,9 @@ export class PublicArrayFilter extends PublicArrayContainer {
 	byTest(testFunction: (item, index?, array?) => boolean): this {
 
 		// each object in filteredResults matches this interface: {value: any, index: integer}
-		let filteredResults = getFilteredResults(testFunction, this.data);
+		let filteredResults = getByTest(testFunction, this.data);
 
-		let values = arrayPluck(filteredResults, 'value');
+		let values = getArrayFromProperty('value', filteredResults);
 		return this._returnThis_after(setArray(this.data, values));
 	}
 
