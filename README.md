@@ -27,9 +27,11 @@ byTest(testFunction): this
     // testFunction = function(currentValue, currentIndex?, theArray?): boolean
 
 byType(
-    type: 'number' | 'boolean' | 'string' | 'array' | 'object' | 'function' | 'undefined'
+    type: 'number' | 'boolean' | 'string' | 'array' | 'object' | 'function' | 'undefined' | 'null'
 ): this
     // Narrows down this.data to only values that are the specified type.
+    // Here, 'null' is considered its own type, separate from 'object'.
+    // You can also pass 'array' as a type.  Passing 'object' will match with objects and arrays.
 ``` 
 The methods below are not important to know about in order to use this  
 class.  They're inherited from [BaseClass](https://github.com/writetome51/typescript-base-class#baseclass) .

@@ -1,6 +1,6 @@
 {
   "name": "@writetome51/public-array-filter",
-  "version": "2.0.1",
+  "version": "3.0.0",
   "description": "Array-manipulating class with methods that narrow down the content of the array",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -25,13 +25,16 @@
   },
   "homepage": "https://github.com/writetome51/public-array-filter#readme",
   "devDependencies": {
-    "@writetome51/arrays-match": "~1.0.5"
+    "@writetome51/arrays-match": "~1.0.6"
   },
   "dependencies": {
-    "basic-data-handling": "~1.0.15",
+    "@writetome51/is-array-not-array": "~1.0.0",
+    "@writetome51/is-object-not-object": "~1.0.0",
     "@writetome51/set-array": "~1.0.2",
-    "@writetome51/array-get-by-test": "~1.0.0",
-    "@writetome51/public-array-container": "~2.0.2",
-    "@writetome51/get-array-from-property": "~1.1.1"
+    "@writetome51/array-get-by-test": "~1.0.1",
+    "@writetome51/public-array-container": "~2.0.3",
+    "@writetome51/public-array-container-by-type-implementation": "~1.0.0",
+    "@writetome51/get-array-from-property": "~1.1.1",
+    "error-if-not-string": "~1.0.0"
   }
 }

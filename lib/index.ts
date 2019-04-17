@@ -1,9 +1,9 @@
-import { PublicArrayContainer } from '@writetome51/public-array-container';
-import { isArray } from 'basic-data-handling/isArray_notArray';
-import { errorIfNotString } from 'basic-data-handling/errorIfNotString';
-import { setArray } from '@writetome51/set-array';
 import { getArrayFromProperty } from '@writetome51/get-array-from-property';
 import { getByTest } from '@writetome51/array-get-by-test';
+import { PublicArrayContainer } from '@writetome51/public-array-container';
+import { setArray } from '@writetome51/set-array';
+import { _publicArrayContainer_byType_implementation }
+	from '@writetome51/public-array-container-by-type-implementation';
 
 
 export class PublicArrayFilter extends PublicArrayContainer {
@@ -26,13 +26,11 @@ export class PublicArrayFilter extends PublicArrayContainer {
 	}
 
 
-	byType(type: 'number' | 'boolean' | 'string' | 'array' | 'object' | 'function' | 'undefined'): this {
-		errorIfNotString(type);
-		// @ts-ignore
-		type = type.toLowerCase();
-		if (type === 'array') return this.byTest((item) => isArray(item));
+	byType(
+		type: 'number' | 'boolean' | 'string' | 'array' | 'object' | 'function' | 'undefined' | 'null'
+	): this {
 
-		else return this.byTest((item) => typeof item === type);
+		return _publicArrayContainer_byType_implementation(type, this);
 	}
 
 

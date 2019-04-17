@@ -13,12 +13,11 @@ var __extends = (this && this.__extends) || (function () {
     };
 })();
 Object.defineProperty(exports, "__esModule", { value: true });
-var public_array_container_1 = require("@writetome51/public-array-container");
-var isArray_notArray_1 = require("basic-data-handling/isArray_notArray");
-var errorIfNotString_1 = require("basic-data-handling/errorIfNotString");
-var set_array_1 = require("@writetome51/set-array");
 var get_array_from_property_1 = require("@writetome51/get-array-from-property");
 var array_get_by_test_1 = require("@writetome51/array-get-by-test");
+var public_array_container_1 = require("@writetome51/public-array-container");
+var set_array_1 = require("@writetome51/set-array");
+var public_array_container_by_type_implementation_1 = require("@writetome51/public-array-container-by-type-implementation");
 var PublicArrayFilter = /** @class */ (function (_super) {
     __extends(PublicArrayFilter, _super);
     function PublicArrayFilter(data) {
@@ -33,13 +32,7 @@ var PublicArrayFilter = /** @class */ (function (_super) {
         return this._returnThis_after(set_array_1.setArray(this.data, values));
     };
     PublicArrayFilter.prototype.byType = function (type) {
-        errorIfNotString_1.errorIfNotString(type);
-        // @ts-ignore
-        type = type.toLowerCase();
-        if (type === 'array')
-            return this.byTest(function (item) { return isArray_notArray_1.isArray(item); });
-        else
-            return this.byTest(function (item) { return typeof item === type; });
+        return public_array_container_by_type_implementation_1._publicArrayContainer_byType_implementation(type, this);
     };
     return PublicArrayFilter;
 }(public_array_container_1.PublicArrayContainer));
