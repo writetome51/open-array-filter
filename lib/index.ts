@@ -8,11 +8,7 @@ import { _publicArrayContainer_byType_implementation }
 
 export class PublicArrayFilter extends PublicArrayContainer {
 
-	constructor(data: any[] = []) {
-		super(data);
-	}
-
-
+	
 	// These methods all narrow down the content of the array and return the class instance.
 
 

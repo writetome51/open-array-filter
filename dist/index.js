@@ -20,9 +20,8 @@ var set_array_1 = require("@writetome51/set-array");
 var public_array_container_by_type_implementation_1 = require("@writetome51/public-array-container-by-type-implementation");
 var PublicArrayFilter = /** @class */ (function (_super) {
     __extends(PublicArrayFilter, _super);
-    function PublicArrayFilter(data) {
-        if (data === void 0) { data = []; }
-        return _super.call(this, data) || this;
+    function PublicArrayFilter() {
+        return _super !== null && _super.apply(this, arguments) || this;
     }
     // These methods all narrow down the content of the array and return the class instance.
     PublicArrayFilter.prototype.byTest = function (testFunction) {

@@ -25,16 +25,16 @@
   },
   "homepage": "https://github.com/writetome51/public-array-filter#readme",
   "devDependencies": {
-    "@writetome51/arrays-match": "~1.0.6"
+    "@writetome51/arrays-match": "^1.0.6"
   },
   "dependencies": {
-    "@writetome51/is-array-not-array": "~1.0.0",
-    "@writetome51/is-object-not-object": "~1.0.0",
-    "@writetome51/set-array": "~1.0.2",
-    "@writetome51/array-get-by-test": "~1.0.1",
-    "@writetome51/public-array-container": "~2.0.3",
-    "@writetome51/public-array-container-by-type-implementation": "~1.0.0",
-    "@writetome51/get-array-from-property": "~1.1.1",
-    "error-if-not-string": "~1.0.0"
+    "@writetome51/is-array-not-array": "^1.0.0",
+    "@writetome51/is-object-not-object": "^1.0.0",
+    "@writetome51/set-array": "^1.0.2",
+    "@writetome51/array-get-by-test": "^1.0.1",
+    "@writetome51/public-array-container": "^3.0.0",
+    "@writetome51/public-array-container-by-type-implementation": "^1.0.0",
+    "@writetome51/get-array-from-property": "^1.1.1",
+    "error-if-not-string": "^1.0.0"
   }
 }

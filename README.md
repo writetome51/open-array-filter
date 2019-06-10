@@ -4,24 +4,27 @@ An array-manipulating Typescript/Javascript class with methods that
 narrow down the content of the array it contains.
 
 ## Constructor
-```
-constructor(data? = [])  // 'data' becomes the array the class manipulates.
+```ts
+constructor(data? = [])  //  'data' is assigned to this.data .
 ```
 
-You can also reset the array by accessing the class `.data` property:
-```
+You can reset the array by accessing the class `.data` property:
+```ts
 this.data = [1,2,3,4];
 ```
     
 ## Properties
-```
+```ts
 data : any[]   // the actual array
 
 className: string (read-only)
 ```
 
 ## Methods
-```
+<details>
+<summary>view methods</summary>
+
+```ts
 byTest(testFunction): this
     // Narrows down this.data to only the values that pass `testFunction`.
     // testFunction = function(currentValue, currentIndex?, theArray?): boolean
@@ -35,7 +38,7 @@ byType(
 ``` 
 The methods below are not important to know about in order to use this  
 class.  They're inherited from [BaseClass](https://github.com/writetome51/typescript-base-class#baseclass) .
-``` 
+```ts 
 protected   _createGetterAndOrSetterForEach(
 		propertyNames: string[],
 		configuration: IGetterSetterConfiguration
@@ -67,13 +70,15 @@ protected   _returnThis_after(voidExpression: any) : this
     // voidExpression is executed, then function returns this.
     // Even if voidExpression returns something, the returned data isn't used.
 
-protected   _runMethod_and_returnThis(
-    callingObject, 
-    method: Function, 
-    methodArgs: any[], 
-    additionalAction?: Function // takes the result returned by method as an argument.
-) : this
+protected   _errorIfPropertyHasNoValue(
+                property: string, // can contain dot-notation, i.e., 'property.subproperty'
+                propertyNameInError? = ''
+            ) : void
+    // If value of this[property] is undefined or null, it triggers fatal error:
+    // `The property "${propertyNameInError}" has no value.`
 ```
+</details>
+
 
 ## Inheritance Chain
 
@@ -81,14 +86,12 @@ PublicArrayFilter<--[PublicArrayContainer](https://github.com/writetome51/public
 
 ## Installation
 
-You must have npm installed first.  Then, in the command line:
-
 ```bash
-npm install @writetome51/public-array-filter
+npm i @writetome51/public-array-filter
 ```
 
 ## Loading
-```
+```ts
 // if using Typescript:
 import { PublicArrayFilter } from '@writetome51/public-array-filter';
 // if using ES5 Javascript:
